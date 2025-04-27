@@ -1,0 +1,32 @@
+name: Test Formula
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test_formula:
+    runs-on: macos-latest
+    permissions:
+      contents: read
+
+    steps:
+    - name: Checkout Tap
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+
+    - name: Set up Homebrew
+      uses: Homebrew/actions/setup-homebrew@master
+
+    - name: Audit Formula
+      run: brew audit --strict Formula/nmsize.rb
+      
+    - name: Test Formula
+      env:
+        HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: brew test-bot --only-formulae Formula/nmsize.rb
