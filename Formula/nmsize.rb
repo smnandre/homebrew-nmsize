@@ -1,8 +1,8 @@
 class Nmsize < Formula
   desc "nmsize - Fast node_modules size scanner"
   homepage "https://github.com/smnandre/nmsize"
-  url "https://github.com/smnandre/nmsize/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "b521ed0b619e39b2719211abb82b7d40d5477d12d4e70a73058b1d8a0064f4bb"
+  url "https://github.com/smnandre/nmsize/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "549b443f2d5b3e916a890a7550e084620351e2c5b6e38d447a574e4f573c6ab1"
   license "MIT"
 
   def install
